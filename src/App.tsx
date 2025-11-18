@@ -213,7 +213,7 @@ function App() {
 
             {/* Course Title and Description */}
             <div className={`transition-all duration-1000 delay-200 ${isVisible('hero') ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}>
-              <h1 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6 leading-tight transform transition-all duration-700"
+              <h1 className="gradient-title text-4xl md:text-5xl mb-6 leading-tight transform transition-all duration-700"
                   style={{ 
                     transform: `translateX(${isVisible('hero') ? '0' : '-100px'})`,
                     transitionDelay: '400ms'
@@ -257,7 +257,7 @@ function App() {
             <div ref={objectivesRef} id="objectives" className={`transition-all duration-1000 ${isVisible('objectives') ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}>
               <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
                 <div>
-                  <h2 className="text-3xl font-bold text-gray-900 mb-8 transform transition-all duration-700"
+                  <h2 className="gradient-title text-3xl mb-8 transform transition-all duration-700"
                       style={{ 
                         transform: `translateX(${isVisible('objectives') ? '0' : '-100px'})`,
                         transitionDelay: '200ms'
@@ -306,7 +306,7 @@ function App() {
             {/* Course Overview */}
             <div ref={overviewRef} id="overview" className={`transition-all duration-1000 ${isVisible('overview') ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}>
               <div className="bg-gradient-to-br from-gray-50 to-white p-8 md:p-12 rounded-2xl border border-gray-100 hover:shadow-lg transition-all duration-500 transform hover:scale-[1.01]">
-                <h2 className="text-3xl font-bold text-gray-900 mb-8 transform transition-all duration-700"
+                <h2 className="gradient-title text-3xl mb-8 transform transition-all duration-700"
                     style={{ 
                       transform: `translateY(${isVisible('overview') ? '0' : '-30px'})`,
                       transitionDelay: '200ms'
@@ -334,7 +334,7 @@ function App() {
             {/* Super Flexible Formatting */}
             <div ref={featuresRef} id="features" className={`transition-all duration-1000 ${isVisible('features') ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}>
               <div className="text-center mb-12">
-                <h2 className="text-3xl font-bold text-gray-900 mb-4 transform transition-all duration-700"
+                <h2 className="gradient-title text-3xl mb-4 transform transition-all duration-700"
                     style={{ 
                       transform: `translateY(${isVisible('features') ? '0' : '-30px'})`,
                       transitionDelay: '200ms'
@@ -376,7 +376,7 @@ function App() {
                     <div className="w-16 h-16 bg-blue-100 rounded-2xl flex items-center justify-center mb-6 group-hover:bg-blue-200 transition-all duration-300 group-hover:scale-110 group-hover:rotate-3">
                       <item.icon className="h-8 w-8 text-blue-600" />
                     </div>
-                    <h3 className="text-xl font-semibold text-gray-900 mb-4 group-hover:text-blue-600 transition-colors duration-300">{item.title}</h3>
+                    <h3 className="gradient-title text-xl mb-4 transition-colors duration-300">{item.title}</h3>
                     <p className="text-gray-600 leading-relaxed group-hover:text-gray-700 transition-colors duration-300">{item.description}</p>
                   </div>
                 ))}
@@ -386,7 +386,7 @@ function App() {
             {/* FAQ Section */}
             <div ref={faqRef} id="faq" className={`transition-all duration-1000 ${isVisible('faq') ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}>
               <div className="text-center mb-12">
-                <h2 className="text-3xl font-bold text-gray-900 mb-4 transform transition-all duration-700"
+                <h2 className="gradient-title text-3xl mb-4 transform transition-all duration-700"
                     style={{ 
                       transform: `translateY(${isVisible('faq') ? '0' : '-30px'})`,
                       transitionDelay: '200ms'
@@ -434,7 +434,7 @@ function App() {
             {/* Related Courses */}
             <div ref={relatedRef} id="related" className={`transition-all duration-1000 ${isVisible('related') ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}>
               <div className="text-center mb-12">
-                <h2 className="text-3xl font-bold text-gray-900 mb-4 transform transition-all duration-700"
+                <h2 className="gradient-title text-3xl mb-4 transform transition-all duration-700"
                     style={{ 
                       transform: `translateY(${isVisible('related') ? '0' : '-30px'})`,
                       transitionDelay: '200ms'
@@ -463,7 +463,7 @@ function App() {
                       className="w-full h-48 object-cover group-hover:scale-110 transition-transform duration-500"
                     />
                     <div className="p-6">
-                      <h3 className="font-semibold text-gray-900 group-hover:text-blue-600 transition-all duration-300 group-hover:translate-x-2">
+                      <h3 className="gradient-title transition-all duration-300 group-hover:translate-x-2">
                         {course.title}
                       </h3>
                     </div>
@@ -495,7 +495,7 @@ function App() {
                      transitionDelay: '500ms'
                    }}>
                 <div className="text-center mb-6">
-                  <h3 className="text-2xl font-bold text-gray-900 mb-2 hover:text-blue-600 transition-colors duration-300">Individual License</h3>
+                  <h3 className="gradient-title text-2xl mb-2 transition-colors duration-300">Individual License</h3>
                   <div className="text-4xl font-bold text-gray-900 mb-2 transform transition-all duration-300 hover:scale-110">$49</div>
                   <p className="text-gray-600">per user</p>
                 </div>
@@ -520,7 +520,7 @@ function App() {
                 </div>
 
                 <div className="mt-8 pt-8 border-t border-gray-100">
-                  <h4 className="font-semibold text-gray-900 mb-4 hover:text-blue-600 transition-colors duration-300">Business Pricing</h4>
+                  <h4 className="gradient-title mb-4 transition-colors duration-300">Business Pricing</h4>
                   <p className="text-sm text-gray-600 mb-4">Volume discounts available</p>
                   <button className="w-full bg-indigo-600 text-white py-4 rounded-xl font-medium hover:bg-indigo-700 transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-xl hover:translate-y-[-2px]">
                     Get Enterprise Quote
