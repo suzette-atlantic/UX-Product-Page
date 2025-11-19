@@ -495,9 +495,9 @@ function App() {
                      transitionDelay: '500ms'
                    }}>
                 <div className="text-center mb-6">
-                  <h3 className="gradient-title text-2xl mb-2 transition-colors duration-300">Individual License</h3>
-                  <div className="text-4xl font-bold text-gray-900 mb-2 transform transition-all duration-300 hover:scale-110">$49</div>
-                  <p className="text-gray-600">per user</p>
+                  <h3 className="gradient-title text-2xl mb-2 transition-colors duration-300">Per-User License</h3>
+                  <div className="text-4xl font-bold text-gray-900 mb-2 transform transition-all duration-300 hover:scale-110">$37</div>
+                  <p className="text-gray-600">one course, $725 min. spend</p>
                 </div>
 
                 <div className="space-y-4 mb-8">
