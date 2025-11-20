@@ -496,8 +496,9 @@ function App() {
                    }}>
                 <div className="text-center mb-6">
                   <h3 className="gradient-title text-2xl mb-2 transition-colors duration-300">Per-User License</h3>
-                  <div className="text-4xl font-bold text-gray-900 mb-2 transform transition-all duration-300 hover:scale-110">$37</div>
-                  <p className="text-gray-600">one course, $725 min. spend</p>
+                  <div className="text-4xl font-bold text-gray-900 mb-1 transform transition-all duration-300 hover:scale-110">$37</div>
+                  <p className="text-sm font-semibold text-gray-700">1 course</p>
+                  <p className="text-sm font-semibold text-gray-700">Minimum Spend $725</p>
                 </div>
 
                 <div className="space-y-4 mb-8">
@@ -519,11 +520,12 @@ function App() {
                   </button>
                 </div>
 
-                <div className="mt-8 pt-8 border-t border-gray-100">
-                  <h4 className="gradient-title mb-4 transition-colors duration-300">Business Pricing</h4>
-                  <p className="text-sm text-gray-600 mb-4">Volume discounts available</p>
-                  <button className="w-full bg-indigo-600 text-white py-4 rounded-xl font-medium hover:bg-indigo-700 transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-xl hover:translate-y-[-2px]">
-                    Get Enterprise Quote
+                <div className="mt-8 pt-8 border-t border-gray-100 text-center">
+                  <p className="text-base text-gray-700 mb-4 font-semibold">
+                    Unlock pricing options and volume discounts for your business
+                  </p>
+                  <button className="w-full text-white py-4 rounded-xl font-medium bg-gradient-to-r from-[#374a9e] to-[#3ac4de] hover:opacity-90 transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-xl hover:translate-y-[-2px]">
+                    Explore Solutions & Pricing
                   </button>
                 </div>
               </div>
