@@ -1,0 +1,1469 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Workplace Safety: Handling Data Breaches Training Course</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Figtree:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --title-gradient-start: #374a9e;
+            --title-gradient-end: #3ac4de;
+            --gray-50: #f9fafb;
+            --gray-100: #f3f4f6;
+            --gray-200: #e5e7eb;
+            --gray-300: #d1d5db;
+            --gray-600: #4b5563;
+            --gray-700: #374151;
+            --gray-800: #1f2937;
+            --gray-900: #111827;
+            --blue-600: #2563eb;
+            --blue-700: #1d4ed8;
+            --green-600: #16a34a;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+            background-color: white;
+            color: var(--gray-900);
+            line-height: 1.6;
+        }
+
+        .gradient-title {
+            font-family: 'Figtree', 'Inter', sans-serif;
+            font-weight: 700;
+            background-image: linear-gradient(120deg, var(--title-gradient-start), var(--title-gradient-end));
+            color: transparent;
+            -webkit-background-clip: text;
+            background-clip: text;
+        }
+
+        /* Header Styles */
+        header {
+            background-color: #000;
+            color: white;
+            position: sticky;
+            top: 0;
+            z-index: 50;
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+        }
+
+        .header-container {
+            max-width: 1280px;
+            margin: 0 auto;
+            padding: 0 1.5rem;
+        }
+
+        @media (min-width: 1024px) {
+            .header-container {
+                padding: 0 2rem;
+            }
+        }
+
+        .header-content {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            height: 5rem;
+        }
+
+        .header-left {
+            display: flex;
+            align-items: center;
+            gap: 2.5rem;
+        }
+
+        .logo-text {
+            font-size: 1.5rem;
+            font-weight: 600;
+            letter-spacing: 0.1em;
+        }
+
+        .nav-links {
+            display: none;
+            align-items: center;
+            gap: 1.5rem;
+            font-size: 0.875rem;
+            font-weight: 500;
+        }
+
+        @media (min-width: 768px) {
+            .nav-links {
+                display: flex;
+            }
+        }
+
+        .nav-links a {
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            color: rgba(255, 255, 255, 0.8);
+            text-decoration: none;
+            transition: color 0.2s;
+        }
+
+        .nav-links a:hover {
+            color: white;
+        }
+
+        .header-right {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .header-actions {
+            display: none;
+            align-items: center;
+            gap: 0.75rem;
+        }
+
+        @media (min-width: 768px) {
+            .header-actions {
+                display: flex;
+            }
+        }
+
+        .search-container {
+            position: relative;
+        }
+
+        .search-icon {
+            width: 1rem;
+            height: 1rem;
+            color: rgba(255, 255, 255, 0.5);
+            position: absolute;
+            left: 0.75rem;
+            top: 50%;
+            transform: translateY(-50%);
+        }
+
+        .search-input {
+            padding: 0.5rem 1rem 0.5rem 2.5rem;
+            background-color: rgba(255, 255, 255, 0.1);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            border-radius: 0.5rem;
+            font-size: 0.875rem;
+            color: white;
+            width: 200px;
+        }
+
+        .search-input::placeholder {
+            color: rgba(255, 255, 255, 0.6);
+        }
+
+        .search-input:focus {
+            outline: none;
+            ring: 2px;
+            ring-color: rgba(255, 255, 255, 0.4);
+        }
+
+        .btn-header {
+            padding: 0.5rem 1.25rem;
+            border-radius: 0.5rem;
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            font-size: 0.875rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            background: transparent;
+            color: white;
+            cursor: pointer;
+            transition: all 0.2s;
+        }
+
+        .btn-header:hover {
+            background-color: white;
+            color: black;
+        }
+
+        .menu-toggle {
+            display: block;
+            padding: 0.5rem;
+            border-radius: 0.375rem;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            background: transparent;
+            color: white;
+            cursor: pointer;
+        }
+
+        @media (min-width: 768px) {
+            .menu-toggle {
+                display: none;
+            }
+        }
+
+        .menu-icon {
+            width: 1.25rem;
+            height: 1.25rem;
+        }
+
+        .mobile-menu {
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            transition: all 0.3s;
+            overflow: hidden;
+            max-height: 0;
+            opacity: 0;
+        }
+
+        .mobile-menu.open {
+            max-height: 24rem;
+            opacity: 1;
+        }
+
+        .mobile-menu-content {
+            padding: 1.5rem 0;
+            display: flex;
+            flex-direction: column;
+            gap: 0.75rem;
+            font-size: 0.875rem;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            color: rgba(255, 255, 255, 0.8);
+        }
+
+        .mobile-menu-content a {
+            display: block;
+            padding: 0.75rem 0;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+            color: rgba(255, 255, 255, 0.8);
+            text-decoration: none;
+            transition: color 0.2s;
+        }
+
+        .mobile-menu-content a:hover {
+            color: white;
+        }
+
+        .mobile-menu-content a:last-of-type {
+            border-bottom: none;
+        }
+
+        .mobile-menu-content button {
+            width: 100%;
+            margin-top: 0.5rem;
+            padding: 0.75rem 1.25rem;
+            border-radius: 0.5rem;
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            background: transparent;
+            color: white;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.2s;
+        }
+
+        .mobile-menu-content button:hover {
+            background-color: white;
+            color: black;
+        }
+
+        /* Main Content */
+        .main-container {
+            max-width: 1280px;
+            margin: 0 auto;
+            padding: 3rem 1.5rem;
+        }
+
+        @media (min-width: 1024px) {
+            .main-container {
+                padding: 3rem 2rem;
+            }
+        }
+
+        .content-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 3rem;
+        }
+
+        @media (min-width: 1024px) {
+            .content-grid {
+                grid-template-columns: 2fr 1fr;
+                gap: 3rem;
+            }
+        }
+
+        .left-column {
+            display: flex;
+            flex-direction: column;
+            gap: 3rem;
+        }
+
+        /* Video Preview */
+        .video-preview {
+            position: relative;
+            background: linear-gradient(to bottom right, var(--gray-50), var(--gray-100));
+            border-radius: 1rem;
+            overflow: hidden;
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+            transition: all 0.5s;
+        }
+
+        .video-preview:hover {
+            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1);
+            transform: scale(1.02);
+        }
+
+        .video-preview img {
+            width: 100%;
+            height: 16rem;
+            object-fit: cover;
+            transition: transform 0.7s;
+        }
+
+        @media (min-width: 768px) {
+            .video-preview img {
+                height: 20rem;
+            }
+        }
+
+        .video-preview:hover img {
+            transform: scale(1.1);
+        }
+
+        .video-overlay {
+            position: absolute;
+            inset: 0;
+            background-color: rgba(0, 0, 0, 0.2);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.3s;
+        }
+
+        .video-preview:hover .video-overlay {
+            background-color: rgba(0, 0, 0, 0.3);
+        }
+
+        .play-button {
+            background-color: rgba(255, 255, 255, 0.9);
+            padding: 1.5rem;
+            border-radius: 50%;
+            border: none;
+            cursor: pointer;
+            transition: all 0.3s;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .play-button:hover {
+            background-color: white;
+            transform: scale(1.25);
+        }
+
+        .play-icon {
+            width: 2rem;
+            height: 2rem;
+            color: var(--blue-600);
+            margin-left: 0.25rem;
+        }
+
+        .video-label {
+            position: absolute;
+            bottom: 1rem;
+            left: 1rem;
+            background-color: rgba(255, 255, 255, 0.9);
+            color: var(--gray-800);
+            padding: 0.25rem 0.75rem;
+            border-radius: 9999px;
+            font-size: 0.875rem;
+            font-weight: 500;
+        }
+
+        /* Course Title */
+        .course-title {
+            font-size: 2.25rem;
+            margin-bottom: 1.5rem;
+            line-height: 1.2;
+            transition: all 0.7s;
+        }
+
+        @media (min-width: 768px) {
+            .course-title {
+                font-size: 3rem;
+            }
+        }
+
+        .course-description {
+            font-size: 1.25rem;
+            color: var(--gray-600);
+            margin-bottom: 2rem;
+            line-height: 1.75;
+            transition: all 0.7s;
+        }
+
+        .course-meta {
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            gap: 1.5rem;
+            font-size: 0.875rem;
+            color: var(--gray-600);
+            margin-bottom: 3rem;
+            transition: all 0.7s;
+        }
+
+        .course-meta-item {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            transition: color 0.2s;
+        }
+
+        .course-meta-item:hover {
+            color: var(--blue-600);
+        }
+
+        .meta-icon {
+            width: 1rem;
+            height: 1rem;
+        }
+
+        /* Section Titles */
+        .section-title {
+            font-size: 1.875rem;
+            margin-bottom: 2rem;
+            transition: all 0.7s;
+        }
+
+        .section-title-large {
+            font-size: 1.875rem;
+            margin-bottom: 1rem;
+            transition: all 0.7s;
+        }
+
+        /* Training Objectives */
+        .objectives-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 3rem;
+            align-items: center;
+        }
+
+        @media (min-width: 768px) {
+            .objectives-grid {
+                grid-template-columns: 1fr 1fr;
+            }
+        }
+
+        .objectives-list {
+            display: flex;
+            flex-direction: column;
+            gap: 1.5rem;
+        }
+
+        .objective-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 1rem;
+            transition: all 0.5s;
+        }
+
+        .objective-item:hover {
+            transform: translateX(0.5rem);
+        }
+
+        .objective-item:hover .objective-text {
+            color: var(--gray-900);
+        }
+
+        .check-circle {
+            flex-shrink: 0;
+            width: 1.5rem;
+            height: 1.5rem;
+            background-color: #dcfce7;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-top: 0.25rem;
+            transition: all 0.3s;
+        }
+
+        .objective-item:hover .check-circle {
+            background-color: #bbf7d0;
+            transform: scale(1.1);
+        }
+
+        .check-icon {
+            width: 1rem;
+            height: 1rem;
+            color: var(--green-600);
+        }
+
+        .objective-text {
+            color: var(--gray-700);
+            line-height: 1.75;
+            transition: all 0.3s;
+        }
+
+        .btn-primary {
+            margin-top: 2rem;
+            background-color: var(--blue-600);
+            color: white;
+            padding: 1rem 2rem;
+            border-radius: 0.75rem;
+            font-weight: 500;
+            border: none;
+            cursor: pointer;
+            transition: all 0.3s;
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+        }
+
+        .btn-primary:hover {
+            background-color: var(--blue-700);
+            transform: scale(1.05) translateY(-2px);
+            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1);
+        }
+
+        .objectives-image {
+            position: relative;
+            transition: all 1s;
+        }
+
+        .objectives-image img {
+            width: 100%;
+            height: 20rem;
+            object-fit: cover;
+            border-radius: 1rem;
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+            transition: all 0.5s;
+        }
+
+        .objectives-image:hover img {
+            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1);
+            transform: scale(1.05);
+        }
+
+        /* Course Overview */
+        .overview-card {
+            background: linear-gradient(to bottom right, var(--gray-50), white);
+            padding: 2rem;
+            border-radius: 1rem;
+            border: 1px solid var(--gray-100);
+            transition: all 0.5s;
+        }
+
+        @media (min-width: 768px) {
+            .overview-card {
+                padding: 3rem;
+            }
+        }
+
+        .overview-card:hover {
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+            transform: scale(1.01);
+        }
+
+        .overview-text {
+            display: flex;
+            flex-direction: column;
+            gap: 1.5rem;
+            color: var(--gray-700);
+            line-height: 1.75;
+            transition: all 0.7s;
+        }
+
+        .overview-text p {
+            transition: color 0.3s;
+        }
+
+        .overview-text p:hover {
+            color: var(--gray-900);
+        }
+
+        /* Features Section */
+        .features-header {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+
+        .features-subtitle {
+            font-size: 1.25rem;
+            color: var(--gray-600);
+            max-width: 48rem;
+            margin: 0 auto;
+            transition: all 0.7s;
+        }
+
+        .features-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 2rem;
+        }
+
+        @media (min-width: 768px) {
+            .features-grid {
+                grid-template-columns: repeat(3, 1fr);
+            }
+        }
+
+        .feature-card {
+            background-color: white;
+            padding: 2rem;
+            border-radius: 1rem;
+            border: 1px solid var(--gray-100);
+            transition: all 0.5s;
+        }
+
+        .feature-card:hover {
+            border-color: #bfdbfe;
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+            transform: scale(1.05) translateY(-0.5rem);
+        }
+
+        .feature-icon-container {
+            width: 4rem;
+            height: 4rem;
+            background-color: #dbeafe;
+            border-radius: 1rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 1.5rem;
+            transition: all 0.3s;
+        }
+
+        .feature-card:hover .feature-icon-container {
+            background-color: #bfdbfe;
+            transform: scale(1.1) rotate(3deg);
+        }
+
+        .feature-icon {
+            width: 2rem;
+            height: 2rem;
+            color: var(--blue-600);
+        }
+
+        .feature-card-title {
+            font-size: 1.25rem;
+            font-weight: 600;
+            color: var(--gray-900);
+            margin-bottom: 1rem;
+            transition: color 0.3s;
+        }
+
+        .feature-card:hover .feature-card-title {
+            color: var(--blue-600);
+        }
+
+        .feature-card-description {
+            color: var(--gray-600);
+            line-height: 1.75;
+            transition: color 0.3s;
+        }
+
+        .feature-card:hover .feature-card-description {
+            color: var(--gray-700);
+        }
+
+        /* FAQ Section */
+        .faq-header {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+
+        .faq-subtitle {
+            font-size: 1.25rem;
+            color: var(--gray-600);
+            transition: all 0.7s;
+        }
+
+        .faq-container {
+            background-color: white;
+            border-radius: 1rem;
+            border: 1px solid var(--gray-100);
+            overflow: hidden;
+            transition: all 0.5s;
+        }
+
+        .faq-container:hover {
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+        }
+
+        .faq-item {
+            border-bottom: 1px solid var(--gray-100);
+            transition: all 0.3s;
+        }
+
+        .faq-item:last-child {
+            border-bottom: none;
+        }
+
+        .faq-question {
+            width: 100%;
+            padding: 1.5rem 2rem;
+            text-align: left;
+            background: transparent;
+            border: none;
+            font-weight: 600;
+            color: var(--gray-900);
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            transition: all 0.3s;
+        }
+
+        .faq-question:hover {
+            background-color: var(--gray-50);
+            transform: translateX(0.5rem);
+        }
+
+        .faq-question:hover .faq-question-text {
+            color: var(--blue-600);
+        }
+
+        .faq-chevron {
+            width: 1.25rem;
+            height: 1.25rem;
+            color: var(--gray-500);
+            transition: all 0.3s;
+        }
+
+        .faq-question:hover .faq-chevron {
+            color: var(--blue-600);
+        }
+
+        .faq-question.active .faq-chevron {
+            transform: rotate(180deg) scale(1.1);
+        }
+
+        .faq-answer {
+            overflow: hidden;
+            transition: all 0.5s;
+            max-height: 0;
+            opacity: 0;
+        }
+
+        .faq-answer.open {
+            max-height: 24rem;
+            opacity: 1;
+        }
+
+        .faq-answer-content {
+            padding: 0 2rem 1.5rem 2rem;
+            color: var(--gray-600);
+            line-height: 1.75;
+            transition: transform 0.3s;
+        }
+
+        /* Related Courses */
+        .related-header {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+
+        .related-subtitle {
+            font-size: 1.25rem;
+            color: var(--gray-600);
+            transition: all 0.7s;
+        }
+
+        .related-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 2rem;
+            margin-bottom: 3rem;
+        }
+
+        @media (min-width: 768px) {
+            .related-grid {
+                grid-template-columns: repeat(3, 1fr);
+            }
+        }
+
+        .related-card {
+            background-color: white;
+            border-radius: 1rem;
+            overflow: hidden;
+            border: 1px solid var(--gray-100);
+            transition: all 0.5s;
+            cursor: pointer;
+        }
+
+        .related-card:hover {
+            border-color: #bfdbfe;
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+            transform: scale(1.05) translateY(-0.5rem);
+        }
+
+        .related-card img {
+            width: 100%;
+            height: 12rem;
+            object-fit: cover;
+            transition: transform 0.5s;
+        }
+
+        .related-card:hover img {
+            transform: scale(1.1);
+        }
+
+        .related-card-content {
+            padding: 1.5rem;
+        }
+
+        .related-card-title {
+            font-weight: 600;
+            color: var(--gray-900);
+            transition: all 0.3s;
+        }
+
+        .related-card:hover .related-card-title {
+            color: var(--blue-600);
+            transform: translateX(0.5rem);
+        }
+
+        .related-buttons {
+            text-align: center;
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+            transition: all 0.7s;
+        }
+
+        .btn-secondary {
+            background-color: var(--gray-100);
+            color: var(--gray-700);
+            padding: 1rem 2rem;
+            border-radius: 0.75rem;
+            font-weight: 500;
+            border: none;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+
+        .btn-secondary:hover {
+            background-color: var(--gray-200);
+            transform: scale(1.05) translateY(-2px);
+        }
+
+        /* Pricing Card */
+        .pricing-card-wrapper {
+            position: sticky;
+            top: 6rem;
+            transition: all 1s;
+        }
+
+        .pricing-card {
+            background-color: white;
+            border-radius: 1rem;
+            border: 1px solid var(--gray-200);
+            padding: 2rem;
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+            transition: all 0.5s;
+        }
+
+        .pricing-card:hover {
+            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1);
+            transform: scale(1.02);
+        }
+
+        .pricing-header {
+            text-align: center;
+            margin-bottom: 1.5rem;
+        }
+
+        .pricing-title {
+            font-size: 1.5rem;
+            margin-bottom: 0.5rem;
+            transition: color 0.3s;
+        }
+
+        .pricing-price {
+            font-size: 2.25rem;
+            font-weight: 700;
+            color: var(--gray-900);
+            margin-bottom: 0.25rem;
+            transition: all 0.3s;
+        }
+
+        .pricing-price:hover {
+            transform: scale(1.1);
+        }
+
+        .pricing-details {
+            font-size: 0.875rem;
+            font-weight: 600;
+            color: var(--gray-700);
+            margin-bottom: 0.25rem;
+        }
+
+        .pricing-features {
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+            margin-bottom: 2rem;
+        }
+
+        .pricing-feature {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            transition: transform 0.3s;
+        }
+
+        .pricing-feature:hover {
+            transform: translateX(0.5rem);
+        }
+
+        .pricing-feature:hover .pricing-feature-text {
+            color: var(--gray-900);
+        }
+
+        .pricing-check-icon {
+            width: 1.25rem;
+            height: 1.25rem;
+            color: var(--green-600);
+            flex-shrink: 0;
+            transition: transform 0.3s;
+        }
+
+        .pricing-feature:hover .pricing-check-icon {
+            transform: scale(1.1);
+        }
+
+        .pricing-feature-text {
+            color: var(--gray-700);
+            transition: color 0.3s;
+        }
+
+        .btn-preview {
+            width: 100%;
+            background-color: var(--gray-100);
+            color: var(--gray-700);
+            padding: 1rem;
+            border-radius: 0.75rem;
+            font-weight: 500;
+            border: none;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+
+        .btn-preview:hover {
+            background-color: var(--gray-200);
+            transform: scale(1.05) translateY(-2px);
+        }
+
+        .pricing-business {
+            margin-top: 2rem;
+            padding-top: 2rem;
+            border-top: 1px solid var(--gray-100);
+            text-align: center;
+        }
+
+        .pricing-business-text {
+            font-size: 1rem;
+            color: var(--gray-700);
+            margin-bottom: 1rem;
+            font-weight: 600;
+        }
+
+        .btn-gradient {
+            width: 100%;
+            color: white;
+            padding: 1rem;
+            border-radius: 0.75rem;
+            font-weight: 500;
+            border: none;
+            cursor: pointer;
+            background: linear-gradient(to right, var(--title-gradient-start), var(--title-gradient-end));
+            transition: all 0.3s;
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+        }
+
+        .btn-gradient:hover {
+            opacity: 0.9;
+            transform: scale(1.05) translateY(-2px);
+            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1);
+        }
+
+        /* Animation Classes */
+        .fade-in {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .fade-out {
+            opacity: 0;
+            transform: translateY(2rem);
+        }
+
+        .hidden {
+            opacity: 0;
+        }
+
+        /* SVG Icons */
+        .icon {
+            display: inline-block;
+            width: 1em;
+            height: 1em;
+            stroke-width: 2;
+            stroke: currentColor;
+            fill: none;
+            stroke-linecap: round;
+            stroke-linejoin: round;
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="header-container">
+            <div class="header-content">
+                <div class="header-left">
+                    <div class="logo-text">ATLANTIC</div>
+                    <nav class="nav-links">
+                        <a href="#">Courses</a>
+                        <a href="#">Software</a>
+                        <a href="#">License</a>
+                        <a href="#">About</a>
+                        <a href="#">Resources</a>
+                        <a href="#">Pricing</a>
+                    </nav>
+                </div>
+                <div class="header-right">
+                    <div class="header-actions">
+                        <div class="search-container">
+                            <svg class="search-icon icon" viewBox="0 0 24 24">
+                                <circle cx="11" cy="11" r="8"></circle>
+                                <path d="m21 21-4.35-4.35"></path>
+                            </svg>
+                            <input type="text" class="search-input" placeholder="Search courses">
+                        </div>
+                        <button class="btn-header">Request Pricing</button>
+                    </div>
+                    <button class="menu-toggle" id="menuToggle" aria-label="Toggle menu">
+                        <svg class="menu-icon icon" viewBox="0 0 24 24" id="menuIcon">
+                            <line x1="3" y1="6" x2="21" y2="6"></line>
+                            <line x1="3" y1="12" x2="21" y2="12"></line>
+                            <line x1="3" y1="18" x2="21" y2="18"></line>
+                        </svg>
+                    </button>
+                </div>
+            </div>
+            <div class="mobile-menu" id="mobileMenu">
+                <div class="mobile-menu-content">
+                    <a href="#">Courses</a>
+                    <a href="#">Software</a>
+                    <a href="#">License</a>
+                    <a href="#">About</a>
+                    <a href="#">Resources</a>
+                    <a href="#">Pricing</a>
+                    <button class="btn-header">Request Pricing</button>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <div class="main-container">
+        <div class="content-grid">
+            <!-- Left Column -->
+            <div class="left-column">
+                <!-- Video Preview -->
+                <div id="hero" class="fade-out">
+                    <div class="video-preview">
+                        <img src="https://images.pexels.com/photos/3861969/pexels-photo-3861969.jpeg?auto=compress&cs=tinysrgb&w=800&h=450&fit=crop" alt="Course Preview">
+                        <div class="video-overlay">
+                            <button class="play-button">
+                                <svg class="play-icon icon" viewBox="0 0 24 24">
+                                    <polygon points="5 3 19 12 5 21 5 3"></polygon>
+                                </svg>
+                            </button>
+                        </div>
+                        <span class="video-label">Watch Course Preview</span>
+                    </div>
+                </div>
+
+                <!-- Course Title and Description -->
+                <div class="fade-out">
+                    <h1 class="gradient-title course-title">Workplace Safety: Handling Data Breaches Training Course</h1>
+                    <p class="course-description">It covers how data breaches occur and how to prevent and respond to them to safeguard sensitive information and minimize risks.</p>
+                    <div class="course-meta">
+                        <div class="course-meta-item">
+                            <svg class="meta-icon icon" viewBox="0 0 24 24">
+                                <circle cx="12" cy="12" r="10"></circle>
+                                <polyline points="12 6 12 12 16 14"></polyline>
+                            </svg>
+                            <span>13 minutes</span>
+                        </div>
+                        <div class="course-meta-item">
+                            <svg class="meta-icon icon" viewBox="0 0 24 24">
+                                <circle cx="12" cy="12" r="10"></circle>
+                                <line x1="2" y1="12" x2="22" y2="12"></line>
+                                <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path>
+                            </svg>
+                            <span>EN / ES / FR</span>
+                        </div>
+                        <div class="course-meta-item">
+                            <svg class="meta-icon icon" viewBox="0 0 24 24">
+                                <circle cx="12" cy="8" r="7"></circle>
+                                <polyline points="8.21 13.89 7 23 12 20 17 23 15.79 13.88"></polyline>
+                            </svg>
+                            <span>2025</span>
+                        </div>
+                        <div class="course-meta-item">
+                            <svg class="meta-icon icon" viewBox="0 0 24 24">
+                                <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
+                            </svg>
+                            <span>SKU: AT197</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Training Objectives -->
+                <div id="objectives" class="fade-out">
+                    <div class="objectives-grid">
+                        <div>
+                            <h2 class="gradient-title section-title">Training Objectives</h2>
+                            <div class="objectives-list">
+                                <div class="objective-item">
+                                    <div class="check-circle">
+                                        <svg class="check-icon icon" viewBox="0 0 24 24">
+                                            <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path>
+                                            <polyline points="22 4 12 14.01 9 11.01"></polyline>
+                                        </svg>
+                                    </div>
+                                    <p class="objective-text">Define various types of data breaches and their significant consequences</p>
+                                </div>
+                                <div class="objective-item">
+                                    <div class="check-circle">
+                                        <svg class="check-icon icon" viewBox="0 0 24 24">
+                                            <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path>
+                                            <polyline points="22 4 12 14.01 9 11.01"></polyline>
+                                        </svg>
+                                    </div>
+                                    <p class="objective-text">Use proactive measures like strong access controls and encryption</p>
+                                </div>
+                                <div class="objective-item">
+                                    <div class="check-circle">
+                                        <svg class="check-icon icon" viewBox="0 0 24 24">
+                                            <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path>
+                                            <polyline points="22 4 12 14.01 9 11.01"></polyline>
+                                        </svg>
+                                    </div>
+                                    <p class="objective-text">Create and follow a data breach response plan</p>
+                                </div>
+                                <div class="objective-item">
+                                    <div class="check-circle">
+                                        <svg class="check-icon icon" viewBox="0 0 24 24">
+                                            <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path>
+                                            <polyline points="22 4 12 14.01 9 11.01"></polyline>
+                                        </svg>
+                                    </div>
+                                    <p class="objective-text">Prioritize clear communication and compliance during a breach</p>
+                                </div>
+                                <div class="objective-item">
+                                    <div class="check-circle">
+                                        <svg class="check-icon icon" viewBox="0 0 24 24">
+                                            <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path>
+                                            <polyline points="22 4 12 14.01 9 11.01"></polyline>
+                                        </svg>
+                                    </div>
+                                    <p class="objective-text">Lead crisis management and ensure ongoing security improvement</p>
+                                </div>
+                            </div>
+                            <button class="btn-primary">Get Pricing</button>
+                        </div>
+                        <div class="objectives-image">
+                            <img src="https://images.pexels.com/photos/3184291/pexels-photo-3184291.jpeg?auto=compress&cs=tinysrgb&w=600&h=400&fit=crop" alt="Professional handshake">
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Course Overview -->
+                <div id="overview" class="fade-out">
+                    <div class="overview-card">
+                        <h2 class="gradient-title section-title">Course Overview</h2>
+                        <div class="overview-text">
+                            <p>Data breaches are not just technical mishaps—they're full-scale crises that can severely impact an organization's reputation, trust, and finances. This course is designed to equip you with the knowledge to understand, prevent, and respond to these threats with confidence. A data breach happens when unauthorized individuals gain access to sensitive or confidential data, often through tactics like malware attacks, phishing scams, insider threats, weak credentials, or stolen devices. Beyond the immediate technical disruption, breaches can lead to costly investigations, legal consequences, regulatory fines, and long-term damage to customer trust.</p>
+                            <p>The course emphasizes proactive data protection strategies such as robust access controls, strong passwords, Multi-Factor Authentication (MFA), and applying the Principle of Least Privilege. You'll also learn about encryption, regular security audits, vulnerability testing, timely software updates, and the critical role of employee training and awareness in identifying and reporting potential threats. When prevention isn't enough, the course walks you through a proven breach response playbook: containment, eradication, recovery, and post-incident investigation.</p>
+                            <p>Additionally, you'll gain insights into the legal and ethical requirements of notifying affected individuals, regulators, and even law enforcement when necessary. The training concludes with post-breach reviews and continuous improvement practices, turning every incident into a stepping stone for stronger, more resilient security measures. This holistic approach ensures that, rather than being paralyzed by fear, your organization can emerge as a vigilant and trusted defender of data.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Super Flexible Formatting -->
+                <div id="features" class="fade-out">
+                    <div class="features-header">
+                        <h2 class="gradient-title section-title-large">Super Flexible Formatting</h2>
+                        <p class="features-subtitle">You'll never find yourself scratching your head, trying to figure out why you can't get our videos to play or courses loaded into any platform.</p>
+                    </div>
+                    <div class="features-grid">
+                        <div class="feature-card">
+                            <div class="feature-icon-container">
+                                <svg class="feature-icon icon" viewBox="0 0 24 24">
+                                    <polygon points="5 3 19 12 5 21 5 3"></polygon>
+                                </svg>
+                            </div>
+                            <h3 class="gradient-title feature-card-title">Access courses in our EHS Software.</h3>
+                            <p class="feature-card-description">View this course in a classroom environment, or assign it to your team individually with testing and recordkeeping capabilities.</p>
+                        </div>
+                        <div class="feature-card">
+                            <div class="feature-icon-container">
+                                <svg class="feature-icon icon" viewBox="0 0 24 24">
+                                    <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+                                    <polyline points="7 10 12 15 17 10"></polyline>
+                                    <line x1="12" y1="15" x2="12" y2="3"></line>
+                                </svg>
+                            </div>
+                            <h3 class="gradient-title feature-card-title">Load courses into your platform.</h3>
+                            <p class="feature-card-description">Each title includes an embed feature that allows users to add videos to their existing training platform or LMS.</p>
+                        </div>
+                        <div class="feature-card">
+                            <div class="feature-icon-container">
+                                <svg class="feature-icon icon" viewBox="0 0 24 24">
+                                    <rect x="2" y="3" width="20" height="14" rx="2" ry="2"></rect>
+                                    <line x1="8" y1="21" x2="16" y2="21"></line>
+                                    <line x1="12" y1="17" x2="12" y2="21"></line>
+                                </svg>
+                            </div>
+                            <h3 class="gradient-title feature-card-title">Access courses in our LMS.</h3>
+                            <p class="feature-card-description">View this course in a classroom environment, or assign it to your team individually with testing and recordkeeping capabilities.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- FAQ Section -->
+                <div id="faq" class="fade-out">
+                    <div class="faq-header">
+                        <h2 class="gradient-title section-title-large">Not Ready to Sign Up?</h2>
+                        <p class="faq-subtitle">No Worries. Here's Some Helpful Info.</p>
+                    </div>
+                    <div class="faq-container">
+                        <div class="faq-item">
+                            <button class="faq-question">
+                                <span class="faq-question-text">What is a data breach?</span>
+                                <svg class="faq-chevron icon" viewBox="0 0 24 24">
+                                    <polyline points="6 9 12 15 18 9"></polyline>
+                                </svg>
+                            </button>
+                            <div class="faq-answer">
+                                <div class="faq-answer-content">A data breach occurs when unauthorized individuals gain access to sensitive, protected, or confidential data, impacting everything from personal employee information to company secrets.</div>
+                            </div>
+                        </div>
+                        <div class="faq-item">
+                            <button class="faq-question">
+                                <span class="faq-question-text">What are the main types of data breaches?</span>
+                                <svg class="faq-chevron icon" viewBox="0 0 24 24">
+                                    <polyline points="6 9 12 15 18 9"></polyline>
+                                </svg>
+                            </button>
+                            <div class="faq-answer">
+                                <div class="faq-answer-content">Major types include malware attacks, phishing scams, insider threats, exploitation of weak credentials, and physical breaches like device theft.</div>
+                            </div>
+                        </div>
+                        <div class="faq-item">
+                            <button class="faq-question">
+                                <span class="faq-question-text">How can my organization proactively protect against data breaches?</span>
+                                <svg class="faq-chevron icon" viewBox="0 0 24 24">
+                                    <polyline points="6 9 12 15 18 9"></polyline>
+                                </svg>
+                            </button>
+                            <div class="faq-answer">
+                                <div class="faq-answer-content">Proactive measures include robust access control (strong passwords, MFA), data encryption, regular security audits, timely software updates, and comprehensive employee training and awareness programs.</div>
+                            </div>
+                        </div>
+                        <div class="faq-item">
+                            <button class="faq-question">
+                                <span class="faq-question-text">What are the immediate steps to take if a data breach occurs?</span>
+                                <svg class="faq-chevron icon" viewBox="0 0 24 24">
+                                    <polyline points="6 9 12 15 18 9"></polyline>
+                                </svg>
+                            </button>
+                            <div class="faq-answer">
+                                <div class="faq-answer-content">Immediate steps involve containment (isolating affected systems), eradication (removing the threat), and recovery (restoring data from backups), followed by a thorough investigation.</div>
+                            </div>
+                        </div>
+                        <div class="faq-item">
+                            <button class="faq-question">
+                                <span class="faq-question-text">Why is communication crucial during a data breach?</span>
+                                <svg class="faq-chevron icon" viewBox="0 0 24 24">
+                                    <polyline points="6 9 12 15 18 9"></polyline>
+                                </svg>
+                            </button>
+                            <div class="faq-answer">
+                                <div class="faq-answer-content">Transparent and timely communication with stakeholders (employees, customers, regulators) is paramount to manage public perception, rebuild trust, ensure compliance with regulations, and mitigate legal risks.</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Related Courses -->
+                <div id="related" class="fade-out">
+                    <div class="related-header">
+                        <h2 class="gradient-title section-title-large">Frequently Taken With...</h2>
+                        <p class="related-subtitle">Build your plan or make it simple and gain access to the entire Atlantic Training Bundle.</p>
+                    </div>
+                    <div class="related-grid">
+                        <div class="related-card">
+                            <img src="https://images.pexels.com/photos/3184291/pexels-photo-3184291.jpeg?auto=compress&cs=tinysrgb&w=400&h=250&fit=crop" alt="Workplace Culture: Positivity in the Workplace">
+                            <div class="related-card-content">
+                                <h3 class="gradient-title related-card-title">Workplace Culture: Positivity in the Workplace</h3>
+                            </div>
+                        </div>
+                        <div class="related-card">
+                            <img src="https://images.pexels.com/photos/3861969/pexels-photo-3861969.jpeg?auto=compress&cs=tinysrgb&w=400&h=250&fit=crop" alt="Cybersecurity Protecting Your Digital Workspace Training Course">
+                            <div class="related-card-content">
+                                <h3 class="gradient-title related-card-title">Cybersecurity Protecting Your Digital Workspace Training Course</h3>
+                            </div>
+                        </div>
+                        <div class="related-card">
+                            <img src="https://images.pexels.com/photos/3184339/pexels-photo-3184339.jpeg?auto=compress&cs=tinysrgb&w=400&h=250&fit=crop" alt="Leadership Development: New Supervisor Training Course">
+                            <div class="related-card-content">
+                                <h3 class="gradient-title related-card-title">Leadership Development: New Supervisor Training Course</h3>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="related-buttons">
+                        <button class="btn-primary">Create Your Plan</button>
+                        <button class="btn-secondary">View Complete Library</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Right Column - Pricing Card -->
+            <div>
+                <div class="pricing-card-wrapper">
+                    <div class="pricing-card">
+                        <div class="pricing-header">
+                            <h3 class="gradient-title pricing-title">Per-User License</h3>
+                            <div class="pricing-price">$37</div>
+                            <p class="pricing-details">1 course</p>
+                            <p class="pricing-details">Minimum Spend $725</p>
+                        </div>
+                        <div class="pricing-features">
+                            <div class="pricing-feature">
+                                <svg class="pricing-check-icon icon" viewBox="0 0 24 24">
+                                    <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path>
+                                    <polyline points="22 4 12 14.01 9 11.01"></polyline>
+                                </svg>
+                                <span class="pricing-feature-text">13-minute interactive course</span>
+                            </div>
+                            <div class="pricing-feature">
+                                <svg class="pricing-check-icon icon" viewBox="0 0 24 24">
+                                    <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path>
+                                    <polyline points="22 4 12 14.01 9 11.01"></polyline>
+                                </svg>
+                                <span class="pricing-feature-text">Certificate of completion</span>
+                            </div>
+                            <div class="pricing-feature">
+                                <svg class="pricing-check-icon icon" viewBox="0 0 24 24">
+                                    <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path>
+                                    <polyline points="22 4 12 14.01 9 11.01"></polyline>
+                                </svg>
+                                <span class="pricing-feature-text">Multiple language options</span>
+                            </div>
+                            <div class="pricing-feature">
+                                <svg class="pricing-check-icon icon" viewBox="0 0 24 24">
+                                    <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path>
+                                    <polyline points="22 4 12 14.01 9 11.01"></polyline>
+                                </svg>
+                                <span class="pricing-feature-text">Progress tracking</span>
+                            </div>
+                            <div class="pricing-feature">
+                                <svg class="pricing-check-icon icon" viewBox="0 0 24 24">
+                                    <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path>
+                                    <polyline points="22 4 12 14.01 9 11.01"></polyline>
+                                </svg>
+                                <span class="pricing-feature-text">Mobile compatible</span>
+                            </div>
+                        </div>
+                        <div class="space-y-4">
+                            <button class="btn-preview">Preview Course</button>
+                        </div>
+                        <div class="pricing-business">
+                            <p class="pricing-business-text">Unlock pricing options and volume discounts for your business</p>
+                            <button class="btn-gradient">Explore Solutions & Pricing</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Mobile Menu Toggle
+        const menuToggle = document.getElementById('menuToggle');
+        const mobileMenu = document.getElementById('mobileMenu');
+        const menuIcon = document.getElementById('menuIcon');
+
+        menuToggle.addEventListener('click', () => {
+            mobileMenu.classList.toggle('open');
+            // Toggle between menu and X icon
+            if (mobileMenu.classList.contains('open')) {
+                menuIcon.innerHTML = '<line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line>';
+            } else {
+                menuIcon.innerHTML = '<line x1="3" y1="6" x2="21" y2="6"></line><line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="18" x2="21" y2="18"></line>';
+            }
+        });
+
+        // FAQ Accordion
+        const faqQuestions = document.querySelectorAll('.faq-question');
+        faqQuestions.forEach((question, index) => {
+            question.addEventListener('click', () => {
+                const answer = question.nextElementSibling;
+                const isOpen = answer.classList.contains('open');
+                
+                // Close all FAQ items
+                document.querySelectorAll('.faq-answer').forEach(ans => {
+                    ans.classList.remove('open');
+                });
+                document.querySelectorAll('.faq-question').forEach(q => {
+                    q.classList.remove('active');
+                });
+                
+                // Open clicked item if it wasn't open
+                if (!isOpen) {
+                    answer.classList.add('open');
+                    question.classList.add('active');
+                }
+            });
+        });
+
+        // Intersection Observer for Scroll Animations
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.remove('fade-out');
+                    entry.target.classList.add('fade-in');
+                }
+            });
+        }, observerOptions);
+
+        // Observe all sections
+        const sections = ['hero', 'objectives', 'overview', 'features', 'faq', 'related'];
+        sections.forEach(id => {
+            const element = document.getElementById(id);
+            if (element) {
+                observer.observe(element);
+            }
+        });
+
+        // Initial visibility for hero section
+        setTimeout(() => {
+            const hero = document.getElementById('hero');
+            if (hero) {
+                hero.classList.remove('fade-out');
+                hero.classList.add('fade-in');
+            }
+        }, 100);
+    </script>
+</body>
+</html>
