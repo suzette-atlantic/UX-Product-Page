@@ -827,9 +827,16 @@
         .related-buttons {
             text-align: center;
             display: flex;
+            flex-direction: column;
             gap: 1rem;
             justify-content: center;
             transition: all 0.7s;
+        }
+
+        @media (min-width: 768px) {
+            .related-buttons {
+                flex-direction: row;
+            }
         }
 
         .btn-secondary {
@@ -1177,7 +1184,8 @@
                             <button class="btn-primary">Get Pricing</button>
                         </div>
                         <div class="objectives-image">
-                            <img src="https://images.pexels.com/photos/3184291/pexels-photo-3184291.jpeg?auto=compress&cs=tinysrgb&w=600&h=400&fit=crop" alt="Professional handshake">
+                            <!-- Replace the src below per product with your preferred Training Objectives image -->
+                            <img src="https://images.pexels.com/photos/3184645/pexels-photo-3184645.jpeg?auto=compress&cs=tinysrgb&w=600&h=400&fit=crop" alt="Training objectives visual">
                         </div>
                     </div>
                 </div>
@@ -1190,6 +1198,23 @@
                             <p>Data breaches are not just technical mishaps—they're full-scale crises that can severely impact an organization's reputation, trust, and finances. This course is designed to equip you with the knowledge to understand, prevent, and respond to these threats with confidence. A data breach happens when unauthorized individuals gain access to sensitive or confidential data, often through tactics like malware attacks, phishing scams, insider threats, weak credentials, or stolen devices. Beyond the immediate technical disruption, breaches can lead to costly investigations, legal consequences, regulatory fines, and long-term damage to customer trust.</p>
                             <p>The course emphasizes proactive data protection strategies such as robust access controls, strong passwords, Multi-Factor Authentication (MFA), and applying the Principle of Least Privilege. You'll also learn about encryption, regular security audits, vulnerability testing, timely software updates, and the critical role of employee training and awareness in identifying and reporting potential threats. When prevention isn't enough, the course walks you through a proven breach response playbook: containment, eradication, recovery, and post-incident investigation.</p>
                             <p>Additionally, you'll gain insights into the legal and ethical requirements of notifying affected individuals, regulators, and even law enforcement when necessary. The training concludes with post-breach reviews and continuous improvement practices, turning every incident into a stepping stone for stronger, more resilient security measures. This holistic approach ensures that, rather than being paralyzed by fear, your organization can emerge as a vigilant and trusted defender of data.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Compliance Standards and Regulations -->
+                <div id="compliance" class="fade-out">
+                    <div class="overview-card" style="margin-top:2.5rem;">
+                        <h2 class="gradient-title section-title">Compliance Standards and Regulations</h2>
+                        <div class="overview-text">
+                            <p>This course is designed to support compliance with applicable workplace safety and data protection standards. It can be used as part of an overall program to help employees understand their responsibilities and your organization’s expectations.</p>
+                            <ul style="margin-left:1.25rem; list-style:disc; display:flex; flex-direction:column; gap:0.5rem;">
+                                <li>Key U.S. federal and state data privacy and security expectations</li>
+                                <li>Internal policies and procedures related to handling sensitive information</li>
+                                <li>Incident response and breach notification best practices</li>
+                                <li>Recordkeeping and documentation considerations</li>
+                            </ul>
+                            <p style="font-size:0.875rem; color:var(--gray-600); margin-top:0.75rem;">Note: This course is informational in nature and should be paired with your organization’s specific policies, procedures, and legal guidance.</p>
                         </div>
                     </div>
                 </div>
@@ -1305,6 +1330,9 @@
                     <div class="related-header">
                         <h2 class="gradient-title section-title-large">Frequently Taken With...</h2>
                         <p class="related-subtitle">Build your plan or make it simple and gain access to the entire Atlantic Training Bundle.</p>
+                    </div>
+                    <div style="max-width:56rem;margin:0 auto 2rem auto;text-align:left;font-size:0.75rem;line-height:1.6;color:var(--gray-600);">
+                        <strong>Disclaimer:</strong> The information provided on this page is subject to change and is for promotional and informational purposes only. Prior to acting on the information contained on this page, verify all information against the latest OSHA and applicable standards, regulations, and guidelines. Please also contact us with any questions you have related to this information. Under no circumstances will Atlantic Training, LLC be held responsible for direct, indirect, consequential, or incidental injuries or damages, or any damages or injuries whatsoever, whether resulting from contract, negligence, or other torts, related to the utilization of this information or the contents of this page. Atlantic Training retains the right to incorporate, remove, or adjust the contents on this page without prior notice.
                     </div>
                     <div class="related-grid">
                         <div class="related-card">
