@@ -35,11 +35,19 @@ npm run dev
 - Hero thumbnail currently references the parent-course image from the WAVE catalog (see `src/App.tsx` hero section).
 - The black header mirrors ATLANTIC’s current production navigation; update menu labels/links inside `src/App.tsx` if product naming changes.
 
-### Change Log (Nov 2025)
+### Change Log (Nov–Dec 2025)
 - Removed banner/breadcrumb stack; added sticky black header with mobile menu.
 - Removed UX mockup variant pills, “⭐️ Most Popular”, “Add to Cart”, 30-day guarantee strip, and the footer.
 - Pricing card now keeps price and CTA pair (`Preview Course`, `Get Enterprise Quote`).
 - Added this `DOCUMENTATION.md`.
+- Introduced Figtree-based gradient title styling across major headings.
+- Updated pricing sidebar copy: **Per-User License**, **$37**, with “1 course” and “Minimum Spend $725”.
+- Replaced older business-pricing CTA with centered copy and a gradient **Explore Solutions & Pricing** button.
+- Added a **Compliance Standards and Regulations** section under Course Overview.
+- Inserted a legal disclaimer block immediately above the **Frequently Taken With...** related-courses section.
+- Adjusted related-courses buttons so they **stack on mobile** and sit side‑by‑side on larger screens.
+- Clarified the Training Objectives side image as a configurable `<img>` per product.
+- Created `product-page.html`, a self-contained static version of the product page (HTML + CSS + vanilla JS) for easy hand-off to other platforms.
 
 ### Next Steps
 - If Paul requests restoring the guarantee badge or swapping hero thumbnails, edit `src/App.tsx` where indicated by comments.
