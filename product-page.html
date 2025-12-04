@@ -581,13 +581,14 @@
         .compliance-header {
             width: 100%;
             padding: 1.5rem 2rem;
-            text-align: left;
+            text-align: center;
             background: transparent;
             border: none;
             cursor: pointer;
             display: flex;
             align-items: center;
-            justify-content: space-between;
+            justify-content: center;
+            position: relative;
             transition: all 0.3s;
         }
 
@@ -599,7 +600,8 @@
             display: flex;
             flex-direction: column;
             gap: 0.5rem;
-            text-align: left;
+            text-align: center;
+            align-items: center;
         }
 
         .compliance-title {
@@ -620,6 +622,8 @@
             color: var(--gray-500);
             transition: all 0.3s;
             flex-shrink: 0;
+            position: absolute;
+            right: 2rem;
         }
 
         .compliance-header:hover .compliance-chevron {
@@ -890,6 +894,14 @@
             color: var(--gray-900);
         }
 
+        .gradient-divider {
+            height: 4px;
+            background: linear-gradient(to right, var(--title-gradient-start), var(--title-gradient-end));
+            border-radius: 2px;
+            margin: 2rem auto;
+            max-width: 56rem;
+        }
+
         .related-grid {
             display: grid;
             grid-template-columns: 1fr;
@@ -980,6 +992,25 @@
             position: sticky;
             top: 6rem;
             transition: all 1s;
+            align-self: start;
+        }
+
+        /* Full width section for Related Courses */
+        .full-width-section {
+            width: 100%;
+            margin-top: 3rem;
+        }
+
+        .full-width-container {
+            max-width: 1280px;
+            margin: 0 auto;
+            padding: 0 1.5rem;
+        }
+
+        @media (min-width: 1024px) {
+            .full-width-container {
+                padding: 0 2rem;
+            }
         }
 
         .pricing-card {
@@ -1473,45 +1504,11 @@
                     </div>
                 </div>
 
-                <!-- Related Courses -->
-                <div id="related" class="fade-out">
-                    <div class="related-header">
-                        <h2 class="gradient-title section-title-large">Frequently Taken With...</h2>
-                        <p class="related-subtitle">Build your plan or make it simple and gain access to the entire Atlantic Training Bundle.</p>
-                    </div>
-                    <div class="disclaimer-box">
-                        <p><strong>Disclaimer:</strong> The information provided on this page is subject to change and is for promotional and informational purposes only. Prior to acting on the information contained on this page, verify all information against the latest OSHA and applicable standards, regulations, and guidelines. Please also contact us with any questions you have related to this information. Under no circumstances will Atlantic Training, LLC be held responsible for direct, indirect, consequential, or incidental injuries or damages, or any damages or injuries whatsoever, whether resulting from contract, negligence, or other torts, related to the utilization of this information or the contents of this page. Atlantic Training retains the right to incorporate, remove, or adjust the contents on this page without prior notice.</p>
-                    </div>
-                    <div class="related-grid">
-                        <div class="related-card">
-                            <img src="https://images.pexels.com/photos/3184291/pexels-photo-3184291.jpeg?auto=compress&cs=tinysrgb&w=400&h=250&fit=crop" alt="Workplace Culture: Positivity in the Workplace">
-                            <div class="related-card-content">
-                                <h3 class="gradient-title related-card-title">Workplace Culture: Positivity in the Workplace</h3>
-                            </div>
-                        </div>
-                        <div class="related-card">
-                            <img src="https://images.pexels.com/photos/3861969/pexels-photo-3861969.jpeg?auto=compress&cs=tinysrgb&w=400&h=250&fit=crop" alt="Cybersecurity Protecting Your Digital Workspace Training Course">
-                            <div class="related-card-content">
-                                <h3 class="gradient-title related-card-title">Cybersecurity Protecting Your Digital Workspace Training Course</h3>
-                            </div>
-                        </div>
-                        <div class="related-card">
-                            <img src="https://images.pexels.com/photos/3184339/pexels-photo-3184339.jpeg?auto=compress&cs=tinysrgb&w=400&h=250&fit=crop" alt="Leadership Development: New Supervisor Training Course">
-                            <div class="related-card-content">
-                                <h3 class="gradient-title related-card-title">Leadership Development: New Supervisor Training Course</h3>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="related-buttons">
-                        <button class="btn-primary">Create Your Plan</button>
-                        <button class="btn-secondary">View Complete Library</button>
-                    </div>
-                </div>
             </div>
 
             <!-- Right Column - Pricing Card -->
             <div>
-                <div class="pricing-card-wrapper">
+                <div class="pricing-card-wrapper" id="pricingCardWrapper">
                     <div class="pricing-card">
                         <div class="pricing-header">
                             <h3 class="gradient-title pricing-title">Per-User License</h3>
@@ -1564,6 +1561,47 @@
                             <button class="btn-gradient">Explore Solutions & Pricing</button>
                         </div>
                     </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Full Width Related Courses Section -->
+    <div class="full-width-section">
+        <div class="full-width-container">
+            <!-- Related Courses -->
+            <div id="related" class="fade-out">
+                <div class="disclaimer-box">
+                    <p><strong>Disclaimer:</strong> The information provided on this page is subject to change and is for promotional and informational purposes only. Prior to acting on the information contained on this page, verify all information against the latest OSHA and applicable standards, regulations, and guidelines. Please also contact us with any questions you have related to this information. Under no circumstances will Atlantic Training, LLC be held responsible for direct, indirect, consequential, or incidental injuries or damages, or any damages or injuries whatsoever, whether resulting from contract, negligence, or other torts, related to the utilization of this information or the contents of this page. Atlantic Training retains the right to incorporate, remove, or adjust the contents on this page without prior notice.</p>
+                </div>
+                <div class="gradient-divider"></div>
+                <div class="related-header">
+                    <h2 class="gradient-title section-title-large">Frequently Taken With...</h2>
+                    <p class="related-subtitle">Build your plan or make it simple and gain access to the entire Atlantic Training Bundle.</p>
+                </div>
+                <div class="related-grid">
+                    <div class="related-card">
+                        <img src="https://images.pexels.com/photos/3184291/pexels-photo-3184291.jpeg?auto=compress&cs=tinysrgb&w=400&h=250&fit=crop" alt="Workplace Culture: Positivity in the Workplace">
+                        <div class="related-card-content">
+                            <h3 class="gradient-title related-card-title">Workplace Culture: Positivity in the Workplace</h3>
+                        </div>
+                    </div>
+                    <div class="related-card">
+                        <img src="https://images.pexels.com/photos/3861969/pexels-photo-3861969.jpeg?auto=compress&cs=tinysrgb&w=400&h=250&fit=crop" alt="Cybersecurity Protecting Your Digital Workspace Training Course">
+                        <div class="related-card-content">
+                            <h3 class="gradient-title related-card-title">Cybersecurity Protecting Your Digital Workspace Training Course</h3>
+                        </div>
+                    </div>
+                    <div class="related-card">
+                        <img src="https://images.pexels.com/photos/3184339/pexels-photo-3184339.jpeg?auto=compress&cs=tinysrgb&w=400&h=250&fit=crop" alt="Leadership Development: New Supervisor Training Course">
+                        <div class="related-card-content">
+                            <h3 class="gradient-title related-card-title">Leadership Development: New Supervisor Training Course</h3>
+                        </div>
+                    </div>
+                </div>
+                <div class="related-buttons">
+                    <button class="btn-primary">Create Your Plan</button>
+                    <button class="btn-secondary">View Complete Library</button>
                 </div>
             </div>
         </div>
@@ -1647,6 +1685,30 @@
                 observer.observe(element);
             }
         });
+
+        // Make pricing card stop being sticky after FAQ section
+        const faqSection = document.getElementById('faq');
+        const pricingCardWrapper = document.getElementById('pricingCardWrapper');
+        
+        if (faqSection && pricingCardWrapper) {
+            const faqObserver = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    // When FAQ section is completely out of view (scrolled past)
+                    if (!entry.isIntersecting && entry.boundingClientRect.top < 0) {
+                        pricingCardWrapper.style.position = 'relative';
+                        pricingCardWrapper.style.top = 'auto';
+                    } else {
+                        pricingCardWrapper.style.position = 'sticky';
+                        pricingCardWrapper.style.top = '6rem';
+                    }
+                });
+            }, {
+                threshold: 0,
+                rootMargin: '0px'
+            });
+            
+            faqObserver.observe(faqSection);
+        }
 
         // Initial visibility for hero and course header sections
         setTimeout(() => {
