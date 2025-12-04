@@ -553,7 +553,7 @@
             transition: all 0.5s;
         }
 
-        /* Compliance Section with Gradient Bars */
+        /* Compliance Section with Gradient Bars - Collapsible */
         .compliance-wrapper {
             position: relative;
             margin-top: 2.5rem;
@@ -566,23 +566,89 @@
             border-radius: 2px;
         }
 
-        .compliance-content {
+        .compliance-container {
             background: linear-gradient(to bottom right, var(--gray-50), white);
-            padding: 2rem;
             border-radius: 1rem;
             border: 1px solid var(--gray-100);
+            overflow: hidden;
             transition: all 0.5s;
         }
 
-        @media (min-width: 768px) {
-            .compliance-content {
-                padding: 3rem;
-            }
+        .compliance-container:hover {
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
         }
 
-        .compliance-content:hover {
-            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
-            transform: scale(1.01);
+        .compliance-header {
+            width: 100%;
+            padding: 1.5rem 2rem;
+            text-align: left;
+            background: transparent;
+            border: none;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            transition: all 0.3s;
+        }
+
+        .compliance-header:hover {
+            background-color: rgba(0, 0, 0, 0.02);
+        }
+
+        .compliance-title-wrapper {
+            display: flex;
+            flex-direction: column;
+            gap: 0.5rem;
+            text-align: left;
+        }
+
+        .compliance-title {
+            font-size: 1.875rem;
+            margin: 0;
+            transition: color 0.3s;
+        }
+
+        .compliance-subtitle {
+            font-size: 0.875rem;
+            color: var(--gray-600);
+            font-weight: 400;
+        }
+
+        .compliance-chevron {
+            width: 1.25rem;
+            height: 1.25rem;
+            color: var(--gray-500);
+            transition: all 0.3s;
+            flex-shrink: 0;
+        }
+
+        .compliance-header:hover .compliance-chevron {
+            color: var(--blue-600);
+        }
+
+        .compliance-header.active .compliance-chevron {
+            transform: rotate(180deg) scale(1.1);
+            color: var(--blue-600);
+        }
+
+        .compliance-content {
+            overflow: hidden;
+            transition: all 0.5s;
+            max-height: 0;
+            opacity: 0;
+        }
+
+        .compliance-content.open {
+            max-height: 1000px;
+            opacity: 1;
+        }
+
+        .compliance-content-inner {
+            padding: 0 2rem 1.5rem 2rem;
+        }
+
+        .compliance-content-inner .overview-text {
+            margin-top: 0;
         }
 
         @media (min-width: 768px) {
@@ -1272,18 +1338,29 @@
                 <div id="compliance" class="fade-out">
                     <div class="compliance-wrapper">
                         <div class="compliance-gradient-top"></div>
-                        <div class="compliance-content">
-                            <h2 class="gradient-title section-title">Compliance Standards & Regulations</h2>
-                            <div class="overview-text">
-                                <p style="text-align: center; margin-bottom: 1rem;">This course references the standards and regulations listed below.</p>
-                                <p>This course is designed to support compliance with applicable workplace safety and data protection standards. It can be used as part of an overall program to help employees understand their responsibilities and your organization's expectations.</p>
-                                <ul style="margin-left:1.25rem; list-style:disc; display:flex; flex-direction:column; gap:0.5rem;">
-                                    <li>Key U.S. federal and state data privacy and security expectations</li>
-                                    <li>Internal policies and procedures related to handling sensitive information</li>
-                                    <li>Incident response and breach notification best practices</li>
-                                    <li>Recordkeeping and documentation considerations</li>
-                                </ul>
-                                <p style="font-size:0.875rem; color:var(--gray-600); margin-top:0.75rem;">Note: This course is informational in nature and should be paired with your organization's specific policies, procedures, and legal guidance.</p>
+                        <div class="compliance-container">
+                            <button class="compliance-header" id="complianceHeader">
+                                <div class="compliance-title-wrapper">
+                                    <h2 class="gradient-title compliance-title">Compliance Standards & Regulations</h2>
+                                    <p class="compliance-subtitle">This course references the standards and regulations listed below.</p>
+                                </div>
+                                <svg class="compliance-chevron icon" viewBox="0 0 24 24">
+                                    <polyline points="6 9 12 15 18 9"></polyline>
+                                </svg>
+                            </button>
+                            <div class="compliance-content" id="complianceContent">
+                                <div class="compliance-content-inner">
+                                    <div class="overview-text">
+                                        <p>This course is designed to support compliance with applicable workplace safety and data protection standards. It can be used as part of an overall program to help employees understand their responsibilities and your organization's expectations.</p>
+                                        <ul style="margin-left:1.25rem; list-style:disc; display:flex; flex-direction:column; gap:0.5rem;">
+                                            <li>Key U.S. federal and state data privacy and security expectations</li>
+                                            <li>Internal policies and procedures related to handling sensitive information</li>
+                                            <li>Incident response and breach notification best practices</li>
+                                            <li>Recordkeeping and documentation considerations</li>
+                                        </ul>
+                                        <p style="font-size:0.875rem; color:var(--gray-600); margin-top:0.75rem;">Note: This course is informational in nature and should be paired with your organization's specific policies, procedures, and legal guidance.</p>
+                                    </div>
+                                </div>
                             </div>
                         </div>
                         <div class="compliance-gradient-bottom"></div>
@@ -1530,6 +1607,22 @@
                 }
             });
         });
+
+        // Compliance Accordion
+        const complianceHeader = document.getElementById('complianceHeader');
+        const complianceContent = document.getElementById('complianceContent');
+        if (complianceHeader && complianceContent) {
+            complianceHeader.addEventListener('click', () => {
+                const isOpen = complianceContent.classList.contains('open');
+                if (isOpen) {
+                    complianceContent.classList.remove('open');
+                    complianceHeader.classList.remove('active');
+                } else {
+                    complianceContent.classList.add('open');
+                    complianceHeader.classList.add('active');
+                }
+            });
+        }
 
         // Intersection Observer for Scroll Animations
         const observerOptions = {
