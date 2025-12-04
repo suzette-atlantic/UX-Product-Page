@@ -162,9 +162,8 @@
         }
 
         .search-input:focus {
-            outline: none;
-            ring: 2px;
-            ring-color: rgba(255, 255, 255, 0.4);
+            outline: 2px solid rgba(255, 255, 255, 0.4);
+            outline-offset: 2px;
         }
 
         .btn-header {
@@ -554,6 +553,38 @@
             transition: all 0.5s;
         }
 
+        /* Compliance Section with Gradient Bars */
+        .compliance-wrapper {
+            position: relative;
+            margin-top: 2.5rem;
+        }
+
+        .compliance-gradient-top,
+        .compliance-gradient-bottom {
+            height: 4px;
+            background: linear-gradient(to right, var(--title-gradient-start), var(--title-gradient-end));
+            border-radius: 2px;
+        }
+
+        .compliance-content {
+            background: linear-gradient(to bottom right, var(--gray-50), white);
+            padding: 2rem;
+            border-radius: 1rem;
+            border: 1px solid var(--gray-100);
+            transition: all 0.5s;
+        }
+
+        @media (min-width: 768px) {
+            .compliance-content {
+                padding: 3rem;
+            }
+        }
+
+        .compliance-content:hover {
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+            transform: scale(1.01);
+        }
+
         @media (min-width: 768px) {
             .overview-card {
                 padding: 3rem;
@@ -768,6 +799,29 @@
             font-size: 1.25rem;
             color: var(--gray-600);
             transition: all 0.7s;
+        }
+
+        .disclaimer-box {
+            max-width: 56rem;
+            margin: 0 auto 2rem auto;
+            padding: 1.5rem;
+            background-color: var(--gray-50);
+            border: 1px solid var(--gray-200);
+            border-radius: 0.75rem;
+            text-align: left;
+            font-size: 0.875rem;
+            line-height: 1.6;
+            color: var(--gray-700);
+            transition: all 0.3s;
+        }
+
+        .disclaimer-box:hover {
+            background-color: var(--gray-100);
+            border-color: var(--gray-300);
+        }
+
+        .disclaimer-box strong {
+            color: var(--gray-900);
         }
 
         .related-grid {
@@ -1094,7 +1148,7 @@
                 </div>
 
                 <!-- Course Title and Description -->
-                <div class="fade-out">
+                <div id="course-header" class="fade-out">
                     <h1 class="gradient-title course-title">Workplace Safety: Handling Data Breaches Training Course</h1>
                     <p class="course-description">It covers how data breaches occur and how to prevent and respond to them to safeguard sensitive information and minimize risks.</p>
                     <div class="course-meta">
@@ -1184,7 +1238,19 @@
                             <button class="btn-primary">Get Pricing</button>
                         </div>
                         <div class="objectives-image">
-                            <!-- Replace the src below per product with your preferred Training Objectives image -->
+                            <!-- 
+                                TRAINING OBJECTIVES IMAGE:
+                                Replace the src below per product with your preferred Training Objectives image.
+                                
+                                OPTION 1: Use a product-specific image (set per course)
+                                OPTION 2: Use Persona-based images (if personas are enabled)
+                                    - Personas are set on the "Parent Course" in production
+                                    - Available personas: Manager/Business, Office Employee, Construction, Medical, HR/Office Manager/Learning Manager, DOT/Trucking/Warehouse, Warehouse/Forklift/Production
+                                    - If using personas, the image should match the selected persona for that course
+                                
+                                The "scruffy guy" (black and white portrait) mentioned in feedback is a persona image
+                                that can be used here if personas are enabled for the course.
+                            -->
                             <img src="https://images.pexels.com/photos/3184645/pexels-photo-3184645.jpeg?auto=compress&cs=tinysrgb&w=600&h=400&fit=crop" alt="Training objectives visual">
                         </div>
                     </div>
@@ -1204,18 +1270,23 @@
 
                 <!-- Compliance Standards and Regulations -->
                 <div id="compliance" class="fade-out">
-                    <div class="overview-card" style="margin-top:2.5rem;">
-                        <h2 class="gradient-title section-title">Compliance Standards and Regulations</h2>
-                        <div class="overview-text">
-                            <p>This course is designed to support compliance with applicable workplace safety and data protection standards. It can be used as part of an overall program to help employees understand their responsibilities and your organization’s expectations.</p>
-                            <ul style="margin-left:1.25rem; list-style:disc; display:flex; flex-direction:column; gap:0.5rem;">
-                                <li>Key U.S. federal and state data privacy and security expectations</li>
-                                <li>Internal policies and procedures related to handling sensitive information</li>
-                                <li>Incident response and breach notification best practices</li>
-                                <li>Recordkeeping and documentation considerations</li>
-                            </ul>
-                            <p style="font-size:0.875rem; color:var(--gray-600); margin-top:0.75rem;">Note: This course is informational in nature and should be paired with your organization’s specific policies, procedures, and legal guidance.</p>
+                    <div class="compliance-wrapper">
+                        <div class="compliance-gradient-top"></div>
+                        <div class="compliance-content">
+                            <h2 class="gradient-title section-title">Compliance Standards & Regulations</h2>
+                            <div class="overview-text">
+                                <p style="text-align: center; margin-bottom: 1rem;">This course references the standards and regulations listed below.</p>
+                                <p>This course is designed to support compliance with applicable workplace safety and data protection standards. It can be used as part of an overall program to help employees understand their responsibilities and your organization's expectations.</p>
+                                <ul style="margin-left:1.25rem; list-style:disc; display:flex; flex-direction:column; gap:0.5rem;">
+                                    <li>Key U.S. federal and state data privacy and security expectations</li>
+                                    <li>Internal policies and procedures related to handling sensitive information</li>
+                                    <li>Incident response and breach notification best practices</li>
+                                    <li>Recordkeeping and documentation considerations</li>
+                                </ul>
+                                <p style="font-size:0.875rem; color:var(--gray-600); margin-top:0.75rem;">Note: This course is informational in nature and should be paired with your organization's specific policies, procedures, and legal guidance.</p>
+                            </div>
                         </div>
+                        <div class="compliance-gradient-bottom"></div>
                     </div>
                 </div>
 
@@ -1331,8 +1402,8 @@
                         <h2 class="gradient-title section-title-large">Frequently Taken With...</h2>
                         <p class="related-subtitle">Build your plan or make it simple and gain access to the entire Atlantic Training Bundle.</p>
                     </div>
-                    <div style="max-width:56rem;margin:0 auto 2rem auto;text-align:left;font-size:0.75rem;line-height:1.6;color:var(--gray-600);">
-                        <strong>Disclaimer:</strong> The information provided on this page is subject to change and is for promotional and informational purposes only. Prior to acting on the information contained on this page, verify all information against the latest OSHA and applicable standards, regulations, and guidelines. Please also contact us with any questions you have related to this information. Under no circumstances will Atlantic Training, LLC be held responsible for direct, indirect, consequential, or incidental injuries or damages, or any damages or injuries whatsoever, whether resulting from contract, negligence, or other torts, related to the utilization of this information or the contents of this page. Atlantic Training retains the right to incorporate, remove, or adjust the contents on this page without prior notice.
+                    <div class="disclaimer-box">
+                        <p><strong>Disclaimer:</strong> The information provided on this page is subject to change and is for promotional and informational purposes only. Prior to acting on the information contained on this page, verify all information against the latest OSHA and applicable standards, regulations, and guidelines. Please also contact us with any questions you have related to this information. Under no circumstances will Atlantic Training, LLC be held responsible for direct, indirect, consequential, or incidental injuries or damages, or any damages or injuries whatsoever, whether resulting from contract, negligence, or other torts, related to the utilization of this information or the contents of this page. Atlantic Training retains the right to incorporate, remove, or adjust the contents on this page without prior notice.</p>
                     </div>
                     <div class="related-grid">
                         <div class="related-card">
@@ -1476,7 +1547,7 @@
         }, observerOptions);
 
         // Observe all sections
-        const sections = ['hero', 'objectives', 'overview', 'features', 'faq', 'related'];
+        const sections = ['hero', 'course-header', 'objectives', 'overview', 'compliance', 'features', 'faq', 'related'];
         sections.forEach(id => {
             const element = document.getElementById(id);
             if (element) {
@@ -1484,12 +1555,17 @@
             }
         });
 
-        // Initial visibility for hero section
+        // Initial visibility for hero and course header sections
         setTimeout(() => {
             const hero = document.getElementById('hero');
+            const courseHeader = document.getElementById('course-header');
             if (hero) {
                 hero.classList.remove('fade-out');
                 hero.classList.add('fade-in');
+            }
+            if (courseHeader) {
+                courseHeader.classList.remove('fade-out');
+                courseHeader.classList.add('fade-in');
             }
         }, 100);
     </script>
