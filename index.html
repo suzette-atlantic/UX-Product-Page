@@ -546,7 +546,7 @@
 
         .btn-primary {
             margin-top: 2rem;
-            background: linear-gradient(to right, #4a6cf7, #3ac4de);
+            background: linear-gradient(to right, var(--title-gradient-start), var(--title-gradient-end));
             color: white;
             padding: 1rem 2rem;
             border-radius: 9999px;
@@ -1022,12 +1022,27 @@
             flex-wrap: wrap;
             gap: 1.5rem;
             justify-content: center;
+            align-items: center;
         }
 
         @media (min-width: 768px) {
             .footer-links {
                 justify-content: flex-start;
             }
+        }
+
+        .footer-links-arrow {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 1.5rem;
+            height: 1.5rem;
+            flex-shrink: 0;
+        }
+
+        .footer-links-arrow svg {
+            width: 100%;
+            height: 100%;
         }
 
         .footer-links a {
@@ -1170,7 +1185,7 @@
         @media (min-width: 768px) {
             .footer-related-buttons {
                 flex-direction: row;
-                gap: 1.5rem;
+                gap: 9.4rem; /* 40mm spacing */
             }
         }
 
@@ -1249,7 +1264,7 @@
         }
 
         .btn-secondary {
-            background: linear-gradient(to right, #4a6cf7, #6b46c1);
+            background: linear-gradient(to right, var(--title-gradient-start), var(--title-gradient-end));
             color: white;
             padding: 1rem 2rem;
             border-radius: 9999px;
@@ -1935,6 +1950,19 @@
                     </a>
                 </div>
                 <div class="footer-links">
+                    <svg width="0" height="0" style="position: absolute;">
+                        <defs>
+                            <linearGradient id="footerGradient" x1="0%" y1="0%" x2="100%" y2="0%">
+                                <stop offset="0%" style="stop-color:#374a9e;stop-opacity:1" />
+                                <stop offset="100%" style="stop-color:#3ac4de;stop-opacity:1" />
+                            </linearGradient>
+                        </defs>
+                    </svg>
+                    <div class="footer-links-arrow">
+                        <svg class="icon" viewBox="0 0 24 24" style="stroke: url(#footerGradient); fill: none; stroke-width: 3;">
+                            <polyline points="15 18 9 12 15 6"></polyline>
+                        </svg>
+                    </div>
                     <a href="#">LMS Login</a>
                     <a href="#">Contact Us</a>
                     <a href="#">Courses</a>
@@ -1944,6 +1972,11 @@
                     <a href="#">About Us</a>
                     <a href="#">Blog</a>
                     <a href="#">Legal</a>
+                    <div class="footer-links-arrow">
+                        <svg class="icon" viewBox="0 0 24 24" style="stroke: url(#footerGradient); fill: none; stroke-width: 3;">
+                            <polyline points="9 18 15 12 9 6"></polyline>
+                        </svg>
+                    </div>
                 </div>
                 <div class="footer-logo">
                     <div class="footer-logo-icon">A</div>
