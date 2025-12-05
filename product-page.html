@@ -58,6 +58,11 @@
             box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
         }
 
+        .header-top-bar {
+            height: 4px;
+            background: linear-gradient(to right, var(--title-gradient-start), var(--title-gradient-end));
+        }
+
         .header-container {
             max-width: 1280px;
             margin: 0 auto;
@@ -83,10 +88,33 @@
             gap: 2.5rem;
         }
 
+        .logo-container {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .logo-icon {
+            width: 2rem;
+            height: 2rem;
+            background: linear-gradient(120deg, var(--title-gradient-start), var(--title-gradient-end));
+            border-radius: 0.25rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 700;
+            font-size: 1.25rem;
+            color: white;
+        }
+
         .logo-text {
             font-size: 1.5rem;
             font-weight: 600;
             letter-spacing: 0.1em;
+            background-image: linear-gradient(120deg, var(--title-gradient-start), var(--title-gradient-end));
+            color: transparent;
+            -webkit-background-clip: text;
+            background-clip: text;
         }
 
         .nav-links {
@@ -106,13 +134,16 @@
         .nav-links a {
             text-transform: uppercase;
             letter-spacing: 0.05em;
-            color: rgba(255, 255, 255, 0.8);
+            background-image: linear-gradient(120deg, var(--title-gradient-start), var(--title-gradient-end));
+            color: transparent;
+            -webkit-background-clip: text;
+            background-clip: text;
             text-decoration: none;
-            transition: color 0.2s;
+            transition: opacity 0.2s;
         }
 
         .nav-links a:hover {
-            color: white;
+            opacity: 0.8;
         }
 
         .header-right {
@@ -140,17 +171,21 @@
         .search-icon {
             width: 1rem;
             height: 1rem;
-            color: rgba(255, 255, 255, 0.5);
             position: absolute;
             left: 0.75rem;
             top: 50%;
             transform: translateY(-50%);
         }
 
+        .search-icon svg {
+            stroke: url(#gradient);
+        }
+
         .search-input {
             padding: 0.5rem 1rem 0.5rem 2.5rem;
-            background-color: rgba(255, 255, 255, 0.1);
-            border: 1px solid rgba(255, 255, 255, 0.2);
+            background-color: transparent;
+            border: 1px solid;
+            border-image: linear-gradient(120deg, var(--title-gradient-start), var(--title-gradient-end)) 1;
             border-radius: 0.5rem;
             font-size: 0.875rem;
             color: white;
@@ -158,31 +193,34 @@
         }
 
         .search-input::placeholder {
-            color: rgba(255, 255, 255, 0.6);
+            background-image: linear-gradient(120deg, var(--title-gradient-start), var(--title-gradient-end));
+            color: transparent;
+            -webkit-background-clip: text;
+            background-clip: text;
         }
 
         .search-input:focus {
-            outline: 2px solid rgba(255, 255, 255, 0.4);
-            outline-offset: 2px;
+            outline: none;
+            border-image: linear-gradient(120deg, var(--title-gradient-start), var(--title-gradient-end)) 1;
         }
 
         .btn-header {
             padding: 0.5rem 1.25rem;
             border-radius: 0.5rem;
-            border: 1px solid rgba(255, 255, 255, 0.3);
+            border: none;
             font-size: 0.875rem;
             font-weight: 600;
             text-transform: uppercase;
             letter-spacing: 0.05em;
-            background: transparent;
+            background: linear-gradient(120deg, var(--title-gradient-start), var(--title-gradient-end));
             color: white;
             cursor: pointer;
             transition: all 0.2s;
         }
 
         .btn-header:hover {
-            background-color: white;
-            color: black;
+            opacity: 0.9;
+            transform: translateY(-1px);
         }
 
         .menu-toggle {
@@ -252,8 +290,8 @@
             margin-top: 0.5rem;
             padding: 0.75rem 1.25rem;
             border-radius: 0.5rem;
-            border: 1px solid rgba(255, 255, 255, 0.3);
-            background: transparent;
+            border: none;
+            background: linear-gradient(120deg, var(--title-gradient-start), var(--title-gradient-end));
             color: white;
             font-weight: 600;
             cursor: pointer;
@@ -261,8 +299,7 @@
         }
 
         .mobile-menu-content button:hover {
-            background-color: white;
-            color: black;
+            opacity: 0.9;
         }
 
         /* Main Content */
@@ -872,22 +909,21 @@
         }
 
         .disclaimer-box {
-            max-width: 56rem;
+            background-color: white;
+            border-radius: 1rem;
+            border: 1px solid var(--gray-100);
+            padding: 1.5rem 2rem;
             margin: 0 auto 2rem auto;
-            padding: 1.5rem;
-            background-color: var(--gray-50);
-            border: 1px solid var(--gray-200);
-            border-radius: 0.75rem;
+            max-width: 56rem;
             text-align: left;
             font-size: 0.875rem;
             line-height: 1.6;
-            color: var(--gray-700);
+            color: var(--gray-600);
             transition: all 0.3s;
         }
 
         .disclaimer-box:hover {
-            background-color: var(--gray-100);
-            border-color: var(--gray-300);
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
         }
 
         .disclaimer-box strong {
@@ -900,6 +936,139 @@
             border-radius: 2px;
             margin: 2rem auto;
             max-width: 56rem;
+        }
+
+        /* Full width gradient divider before footer */
+        .full-width-gradient-divider {
+            width: 100%;
+            height: 4px;
+            background: linear-gradient(to right, var(--title-gradient-start), var(--title-gradient-end));
+            margin: 0;
+        }
+
+        /* Footer Styles */
+        footer {
+            background-color: #000;
+            color: white;
+            padding: 3rem 0;
+            margin-top: 0;
+        }
+
+        .footer-container {
+            max-width: 1280px;
+            margin: 0 auto;
+            padding: 0 1.5rem;
+        }
+
+        @media (min-width: 1024px) {
+            .footer-container {
+                padding: 0 2rem;
+            }
+        }
+
+        .footer-content {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 2rem;
+            margin-bottom: 2rem;
+        }
+
+        @media (min-width: 768px) {
+            .footer-content {
+                grid-template-columns: auto 1fr auto;
+                gap: 3rem;
+                align-items: start;
+            }
+        }
+
+        .footer-social {
+            display: flex;
+            gap: 1rem;
+        }
+
+        .social-icon {
+            width: 2.5rem;
+            height: 2.5rem;
+            border: 1px solid rgba(59, 196, 222, 0.5);
+            border-radius: 0.5rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: rgba(59, 196, 222, 1);
+            transition: all 0.3s;
+            cursor: pointer;
+            text-decoration: none;
+        }
+
+        .social-icon:hover {
+            background-color: rgba(59, 196, 222, 0.1);
+            transform: scale(1.1);
+        }
+
+        .footer-links {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1.5rem;
+            justify-content: center;
+        }
+
+        @media (min-width: 768px) {
+            .footer-links {
+                justify-content: flex-start;
+            }
+        }
+
+        .footer-links a {
+            color: white;
+            text-decoration: none;
+            font-size: 0.875rem;
+            transition: color 0.2s;
+        }
+
+        .footer-links a:hover {
+            color: rgba(59, 196, 222, 1);
+        }
+
+        .footer-bottom {
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            padding-top: 2rem;
+            text-align: center;
+        }
+
+        .footer-copyright {
+            font-size: 0.875rem;
+            color: rgba(255, 255, 255, 0.7);
+            margin-bottom: 1rem;
+        }
+
+        .footer-logo {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.5rem;
+        }
+
+        .footer-logo-icon {
+            width: 2rem;
+            height: 2rem;
+            background: linear-gradient(120deg, var(--title-gradient-start), var(--title-gradient-end));
+            border-radius: 0.25rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 700;
+            font-size: 1.25rem;
+            color: white;
+        }
+
+        .footer-logo-text {
+            font-size: 1.5rem;
+            font-weight: 600;
+            letter-spacing: 0.1em;
+            background-image: linear-gradient(120deg, var(--title-gradient-start), var(--title-gradient-end));
+            color: transparent;
+            -webkit-background-clip: text;
+            background-clip: text;
         }
 
         .related-grid {
@@ -1177,29 +1346,41 @@
 <body>
     <!-- Header -->
     <header>
+        <div class="header-top-bar"></div>
         <div class="header-container">
             <div class="header-content">
                 <div class="header-left">
-                    <div class="logo-text">ATLANTIC</div>
+                    <div class="logo-container">
+                        <div class="logo-icon">A</div>
+                        <div class="logo-text">ATLANTIC</div>
+                    </div>
                     <nav class="nav-links">
-                        <a href="#">Courses</a>
-                        <a href="#">Software</a>
-                        <a href="#">License</a>
-                        <a href="#">About</a>
-                        <a href="#">Resources</a>
-                        <a href="#">Pricing</a>
+                        <a href="#">COURSES</a>
+                        <a href="#">SOFTWARE</a>
+                        <a href="#">LICENSE</a>
+                        <a href="#">ABOUT</a>
+                        <a href="#">RESOURCES</a>
+                        <a href="#">PRICING</a>
+                        <a href="#">LOGIN</a>
+                        <a href="#">CONTACT</a>
                     </nav>
                 </div>
                 <div class="header-right">
                     <div class="header-actions">
                         <div class="search-container">
                             <svg class="search-icon icon" viewBox="0 0 24 24">
+                                <defs>
+                                    <linearGradient id="gradient" x1="0%" y1="0%" x2="100%" y2="0%">
+                                        <stop offset="0%" style="stop-color:#374a9e;stop-opacity:1" />
+                                        <stop offset="100%" style="stop-color:#3ac4de;stop-opacity:1" />
+                                    </linearGradient>
+                                </defs>
                                 <circle cx="11" cy="11" r="8"></circle>
                                 <path d="m21 21-4.35-4.35"></path>
                             </svg>
-                            <input type="text" class="search-input" placeholder="Search courses">
+                            <input type="text" class="search-input" placeholder="SEARCH COURSES">
                         </div>
-                        <button class="btn-header">Request Pricing</button>
+                        <button class="btn-header">GET YOUR PRICING</button>
                     </div>
                     <button class="menu-toggle" id="menuToggle" aria-label="Toggle menu">
                         <svg class="menu-icon icon" viewBox="0 0 24 24" id="menuIcon">
@@ -1212,13 +1393,15 @@
             </div>
             <div class="mobile-menu" id="mobileMenu">
                 <div class="mobile-menu-content">
-                    <a href="#">Courses</a>
-                    <a href="#">Software</a>
-                    <a href="#">License</a>
-                    <a href="#">About</a>
-                    <a href="#">Resources</a>
-                    <a href="#">Pricing</a>
-                    <button class="btn-header">Request Pricing</button>
+                    <a href="#">COURSES</a>
+                    <a href="#">SOFTWARE</a>
+                    <a href="#">LICENSE</a>
+                    <a href="#">ABOUT</a>
+                    <a href="#">RESOURCES</a>
+                    <a href="#">PRICING</a>
+                    <a href="#">LOGIN</a>
+                    <a href="#">CONTACT</a>
+                    <button class="btn-header">GET YOUR PRICING</button>
                 </div>
             </div>
         </div>
@@ -1606,6 +1789,60 @@
             </div>
         </div>
     </div>
+
+    <!-- Full Width Gradient Divider Before Footer -->
+    <div class="full-width-gradient-divider"></div>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-container">
+            <div class="footer-content">
+                <div class="footer-social">
+                    <a href="#" class="social-icon" aria-label="LinkedIn">
+                        <svg class="icon" viewBox="0 0 24 24" style="width: 1.25rem; height: 1.25rem;">
+                            <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path>
+                            <rect x="2" y="9" width="4" height="12"></rect>
+                            <circle cx="4" cy="4" r="2"></circle>
+                        </svg>
+                    </a>
+                    <a href="#" class="social-icon" aria-label="Facebook">
+                        <svg class="icon" viewBox="0 0 24 24" style="width: 1.25rem; height: 1.25rem;">
+                            <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"></path>
+                        </svg>
+                    </a>
+                    <a href="#" class="social-icon" aria-label="Twitter">
+                        <svg class="icon" viewBox="0 0 24 24" style="width: 1.25rem; height: 1.25rem;">
+                            <path d="M23 3a10.9 10.9 0 0 1-3.14 1.53 4.48 4.48 0 0 0-7.86 3v1A10.66 10.66 0 0 1 3 4s-4 9 5 13a11.64 11.64 0 0 1-7 2c9 5 20 0 20-11.5a4.5 4.5 0 0 0-.08-.83A7.72 7.72 0 0 0 23 3z"></path>
+                        </svg>
+                    </a>
+                    <a href="#" class="social-icon" aria-label="YouTube">
+                        <svg class="icon" viewBox="0 0 24 24" style="width: 1.25rem; height: 1.25rem;">
+                            <path d="M22.54 6.42a2.78 2.78 0 0 0-1.94-2C18.88 4 12 4 12 4s-6.88 0-8.6.46a2.78 2.78 0 0 0-1.94 2A29 29 0 0 0 1 11.75a29 29 0 0 0 .46 5.33A2.78 2.78 0 0 0 3.4 19c1.72.46 8.6.46 8.6.46s6.88 0 8.6-.46a2.78 2.78 0 0 0 1.94-2 29 29 0 0 0 .46-5.25 29 29 0 0 0-.46-5.33z"></path>
+                            <polygon points="9.75 15.02 15.5 11.75 9.75 8.48 9.75 15.02"></polygon>
+                        </svg>
+                    </a>
+                </div>
+                <div class="footer-links">
+                    <a href="#">LMS Login</a>
+                    <a href="#">Contact Us</a>
+                    <a href="#">Courses</a>
+                    <a href="#">Software</a>
+                    <a href="#">Pricing</a>
+                    <a href="#">Resources</a>
+                    <a href="#">About Us</a>
+                    <a href="#">Blog</a>
+                    <a href="#">Legal</a>
+                </div>
+                <div class="footer-logo">
+                    <div class="footer-logo-icon">A</div>
+                    <div class="footer-logo-text">ATLANTIC</div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p class="footer-copyright">Copyright © 2025 Atlantic Training LLC</p>
+            </div>
+        </div>
+    </footer>
 
     <script>
         // Mobile Menu Toggle
