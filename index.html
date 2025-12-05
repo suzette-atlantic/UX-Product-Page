@@ -1117,11 +1117,42 @@
             transition: all 0.7s;
         }
 
+        .footer-related-cards-wrapper {
+            position: relative;
+            display: flex;
+            align-items: center;
+            gap: 2rem;
+            margin-bottom: 3rem;
+        }
+
+        .footer-related-carousel-arrow {
+            flex-shrink: 0;
+            width: 3rem;
+            height: 3rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            transition: all 0.3s;
+            background: transparent;
+            border: none;
+            padding: 0;
+        }
+
+        .footer-related-carousel-arrow:hover {
+            transform: scale(1.2);
+        }
+
+        .footer-related-carousel-arrow svg {
+            width: 100%;
+            height: 100%;
+        }
+
         .footer-related-grid {
             display: grid;
             grid-template-columns: 1fr;
             gap: 2rem;
-            margin-bottom: 3rem;
+            flex: 1;
         }
 
         @media (min-width: 768px) {
@@ -1897,25 +1928,45 @@
                     <h2 class="gradient-title section-title-large">Frequently Taken With...</h2>
                     <p class="footer-related-subtitle">Build your plan or make it simple and gain access to the entire Atlantic Training Bundle.</p>
                 </div>
-                <div class="footer-related-grid">
-                    <div class="footer-related-card">
-                        <img src="https://images.pexels.com/photos/3184291/pexels-photo-3184291.jpeg?auto=compress&cs=tinysrgb&w=400&h=250&fit=crop" alt="Workplace Culture: Positivity in the Workplace">
-                        <div class="footer-related-card-content">
-                            <h3 class="gradient-title footer-related-card-title">Workplace Culture: Positivity in the Workplace</h3>
+                <div class="footer-related-cards-wrapper">
+                    <svg width="0" height="0" style="position: absolute;">
+                        <defs>
+                            <linearGradient id="carouselGradient" x1="0%" y1="0%" x2="100%" y2="0%">
+                                <stop offset="0%" style="stop-color:#374a9e;stop-opacity:1" />
+                                <stop offset="100%" style="stop-color:#3ac4de;stop-opacity:1" />
+                            </linearGradient>
+                        </defs>
+                    </svg>
+                    <button class="footer-related-carousel-arrow" aria-label="Previous courses">
+                        <svg class="icon" viewBox="0 0 24 24" style="stroke: url(#carouselGradient); fill: none; stroke-width: 3; stroke-linecap: round;">
+                            <polyline points="15 18 9 12 15 6"></polyline>
+                        </svg>
+                    </button>
+                    <div class="footer-related-grid">
+                        <div class="footer-related-card">
+                            <img src="https://images.pexels.com/photos/3184291/pexels-photo-3184291.jpeg?auto=compress&cs=tinysrgb&w=400&h=250&fit=crop" alt="Workplace Culture: Positivity in the Workplace">
+                            <div class="footer-related-card-content">
+                                <h3 class="gradient-title footer-related-card-title">Workplace Culture: Positivity in the Workplace</h3>
+                            </div>
+                        </div>
+                        <div class="footer-related-card">
+                            <img src="https://images.pexels.com/photos/3861969/pexels-photo-3861969.jpeg?auto=compress&cs=tinysrgb&w=400&h=250&fit=crop" alt="Cybersecurity Protecting Your Digital Workspace Training Course">
+                            <div class="footer-related-card-content">
+                                <h3 class="gradient-title footer-related-card-title">Cybersecurity Protecting Your Digital Workspace Training Course</h3>
+                            </div>
+                        </div>
+                        <div class="footer-related-card">
+                            <img src="https://images.pexels.com/photos/3184339/pexels-photo-3184339.jpeg?auto=compress&cs=tinysrgb&w=400&h=250&fit=crop" alt="Leadership Development: New Supervisor Training Course">
+                            <div class="footer-related-card-content">
+                                <h3 class="gradient-title footer-related-card-title">Leadership Development: New Supervisor Training Course</h3>
+                            </div>
                         </div>
                     </div>
-                    <div class="footer-related-card">
-                        <img src="https://images.pexels.com/photos/3861969/pexels-photo-3861969.jpeg?auto=compress&cs=tinysrgb&w=400&h=250&fit=crop" alt="Cybersecurity Protecting Your Digital Workspace Training Course">
-                        <div class="footer-related-card-content">
-                            <h3 class="gradient-title footer-related-card-title">Cybersecurity Protecting Your Digital Workspace Training Course</h3>
-                        </div>
-                    </div>
-                    <div class="footer-related-card">
-                        <img src="https://images.pexels.com/photos/3184339/pexels-photo-3184339.jpeg?auto=compress&cs=tinysrgb&w=400&h=250&fit=crop" alt="Leadership Development: New Supervisor Training Course">
-                        <div class="footer-related-card-content">
-                            <h3 class="gradient-title footer-related-card-title">Leadership Development: New Supervisor Training Course</h3>
-                        </div>
-                    </div>
+                    <button class="footer-related-carousel-arrow" aria-label="Next courses">
+                        <svg class="icon" viewBox="0 0 24 24" style="stroke: url(#carouselGradient); fill: none; stroke-width: 3; stroke-linecap: round;">
+                            <polyline points="9 18 15 12 9 6"></polyline>
+                        </svg>
+                    </button>
                 </div>
                 <div class="footer-related-buttons">
                     <button class="btn-primary">Create Your Plan</button>
@@ -1950,19 +2001,6 @@
                     </a>
                 </div>
                 <div class="footer-links">
-                    <svg width="0" height="0" style="position: absolute;">
-                        <defs>
-                            <linearGradient id="footerGradient" x1="0%" y1="0%" x2="100%" y2="0%">
-                                <stop offset="0%" style="stop-color:#374a9e;stop-opacity:1" />
-                                <stop offset="100%" style="stop-color:#3ac4de;stop-opacity:1" />
-                            </linearGradient>
-                        </defs>
-                    </svg>
-                    <div class="footer-links-arrow">
-                        <svg class="icon" viewBox="0 0 24 24" style="stroke: url(#footerGradient); fill: none; stroke-width: 3;">
-                            <polyline points="15 18 9 12 15 6"></polyline>
-                        </svg>
-                    </div>
                     <a href="#">LMS Login</a>
                     <a href="#">Contact Us</a>
                     <a href="#">Courses</a>
@@ -1972,11 +2010,6 @@
                     <a href="#">About Us</a>
                     <a href="#">Blog</a>
                     <a href="#">Legal</a>
-                    <div class="footer-links-arrow">
-                        <svg class="icon" viewBox="0 0 24 24" style="stroke: url(#footerGradient); fill: none; stroke-width: 3;">
-                            <polyline points="9 18 15 12 9 6"></polyline>
-                        </svg>
-                    </div>
                 </div>
                 <div class="footer-logo">
                     <div class="footer-logo-icon">A</div>
