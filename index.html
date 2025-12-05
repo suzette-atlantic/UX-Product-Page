@@ -921,6 +921,7 @@
             line-height: 1.75;
             color: var(--gray-600);
             transition: all 0.3s;
+            overflow: hidden;
         }
 
         .disclaimer-box:hover {
@@ -930,6 +931,10 @@
         .disclaimer-box strong {
             color: var(--gray-900);
             font-weight: 600;
+        }
+
+        .disclaimer-box p {
+            margin: 0;
         }
 
         .gradient-divider {
@@ -970,7 +975,7 @@
             display: grid;
             grid-template-columns: 1fr;
             gap: 2rem;
-            margin-bottom: 2rem;
+            margin-bottom: 0;
         }
 
         @media (min-width: 768px) {
@@ -1032,6 +1037,7 @@
         .footer-bottom {
             border-top: 1px solid rgba(255, 255, 255, 0.1);
             padding-top: 2rem;
+            margin-top: 2rem;
             text-align: center;
         }
 
